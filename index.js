@@ -4,7 +4,9 @@ const inputs = document.getElementsByTagName("input");
 
 const handleSubmit = () => {
   let input = inputs[0].value;
-
+  if (input === "" || !/\S/.test(input)) {
+    return false;
+  }
   let li = document.createElement("li");
   let btn = document.createElement("button");
   btn.innerHTML = input;
