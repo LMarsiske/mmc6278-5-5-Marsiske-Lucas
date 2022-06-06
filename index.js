@@ -15,4 +15,13 @@ const handleSubmit = () => {
   return false;
 };
 
+const handleClick = (e) => {
+  console.log(e.target);
+  if (e.target.style.textDecoration === "line-through") {
+    todoList.removeChild(e.target.parentNode);
+  } else {
+    e.target.style.textDecoration = "line-through";
+  }
+};
+
 form.onsubmit = handleSubmit;
